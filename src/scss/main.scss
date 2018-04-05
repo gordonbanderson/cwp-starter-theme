@@ -4,7 +4,8 @@
 // Third-party libraries
 // sass-lint:disable clean-import-paths
 @import "~font-awesome/scss/font-awesome";
-@import "~bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/bootstrap-reboot";
 // sass-lint:enable clean-import-paths
 
 // Mixins
