@@ -1,6 +1,6 @@
 {
-  "name": "cwp-starter-theme",
-  "version": "2.0.0",
+  "name": "gba-ss4-bootstrap4-theme",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "watch": "webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --watch",
