@@ -3,7 +3,7 @@ import $ from 'jquery';
 /* eslint-enable */
 
 export default function () {
-  $('#main img').addClass('img-responsive');
+  $('#main img').addClass('img-responsive-whoohoo');
 
   $('#main div .captionImage.right')
     .removeClass('right')

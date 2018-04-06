@@ -1,63 +1,31 @@
-let mix = require('laravel-mix');
+let mix = require("laravel-mix");
+let path = require('path');
+
+mix.webpackConfig({
+  externals: {
+    '$': 'jQuery',
+    'jquery': 'jQuery'
+  }
+});
+
+//this fixes an API change introduced at //https://github.com/webpack/webpack/issues/4549
+mix.setPublicPath(
+  path.resolve(__dirname, 'dist')
+);
 
 mix.autoload({
   jquery: ['$', 'jQuery', 'window.jQuery'],
   'popper.js/dist/umd/popper.js': ['Popper']
 })
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
-const extractSass = new ExtractTextPlugin({
-  filename: "styles.css",
-});
+// do bootstrap4 separately
+mix.sass('src/scss/bootstrap.scss', 'css/bootstrap4.css')
+  .js('src/js/bootstrap.js', 'js/bootstrap4.js')
+ ;
 
-//mix.js("src/js/main.js", "js/main.js");
-//mix
-//  .sass("src/scss/main.scss", "css/main.css")
-//  .sass("src/scss/editor.scss", "css/editor.css");
+mix.js("src/js/main.js", "js/main.js")
+.sass("src/scss/main.scss", "css/main.css")
+;
 
-//mix.copy("src/images", "images");v
 
-mix.sass("src/scss/main.scss", "css/main.css")
-  .sass("src/scss/editor.scss", "css/editor.css")
-  .webpackConfig({
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          include: path.resolve(__dirname, 'src'),
-          use: [{
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                ['es2015', 'stage-2']
-              ]
-            }
-          }]
-        },
-        {
-          test: /\.(scss)$/,
-          use: extractSass.extract({
-            fallback: 'style-loader',
-            //resolve-url-loader may be chained before sass-loader if necessary
-            use: [{
-              loader: 'style-loader', // inject CSS to page
-            }, {
-              loader: 'css-loader', // translates CSS into CommonJS modules
-            }, {
-              loader: 'postcss-loader', // Run post css actions
-              options: {
-                plugins: function () { // post css plugins, can be exported to postcss.config.js
-                  return [
-                    require('precss'),
-                    require('autoprefixer')
-                  ];
-                }
-              }
-            }, {
-              loader: 'sass-loader' // compiles Sass to CSS
-            }]
-          })
-        }
-      ]
-    }
-  });
+mix.copy("src/images", "images");

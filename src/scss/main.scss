@@ -1,12 +1,10 @@
 // Theme specific variables and overrides
 @import "./variables";
 
-// Third-party libraries
-// sass-lint:disable clean-import-paths
-@import "~font-awesome/scss/font-awesome";
-@import "~bootstrap/scss/_functions";
-@import "~bootstrap/scss/bootstrap-reboot";
 // sass-lint:enable clean-import-paths
+
+// used by forms
+@import "~bootstrap/scss/mixins/_clearfix.scss";
 
 // Mixins
 @import "./utils/mixins";
