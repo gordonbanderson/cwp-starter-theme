@@ -7,4 +7,5 @@ mix.autoload({
 
 mix.js('test.js', 'testoutput.js')
   .mix.sass('test.sass', 'testoutput.css')
+  .mix.version()
 ;

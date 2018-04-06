@@ -4,10 +4,11 @@
         <% base_tag %>
         <title><% if $MetaTitle %>$MetaTitle.XML<% else %>$Title.XML<% end_if %> | $SiteConfig.Title.XML</title>
         $MetaTags(false)
-        <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <% if $RSSLink %>
         <link rel='alternate' type='application/rss+xml' title='RSS' href='$RSSLink'>
         <% end_if %>
+        <% require themedCss('dist/css/bootstrap4.css') %>
         <% require themedCss('dist/css/main.css') %>
         <% include Favicon %>
     </head>
@@ -24,7 +25,8 @@
             <% include Footer %>
         </footer>
         <% require javascript('//code.jquery.com/jquery-1.7.2.min.js') %>
-        <% require themedJavascript('dist/js/main.js') %>
+            <% require themedJavascript('dist/dist/js/bootstrap4') %>
+            <% require themedJavascript('dist/js/main.js') %>
         <% include GoogleAnalytics %>
     </body>
 </html>

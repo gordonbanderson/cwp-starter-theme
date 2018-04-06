@@ -1,6 +1,7 @@
 {
-    "/dist/js/main.js": "/dist/js/main.js",
-    "/dist/js/bootstrap4.js": "/dist/js/bootstrap4.js",
-    "/css/bootstrap4.css": "/css/bootstrap4.css",
-    "/css/main.css": "/css/main.css"
+    "/dist/js/bootstrap4.js": "/dist/js/bootstrap4.js?id=fb27bde69973d4625226",
+    "/css/bootstrap4.css": "/css/bootstrap4.css?id=735a76a4ed3f936612cd",
+    "/css/main.css": "/css/main.css?id=cb59c5ce0455729168c6",
+    "/css/editor.css": "/css/editor.css?id=cdf3fd4dd3361619d13d",
+    "/dist/js/main.js": "/dist/js/main.js?id=adc9116e85b8227494dc"
 }
